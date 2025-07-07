@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Savate:ital,wght@0,200..900;1,200..900&display=swap");
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.h1-welcomeScreen,
+.p-welcomeScreen {
+  font-family: Raleway;
+}
+.h1-welcomeScreen {
+  font-size: 3.2rem;
+  border-bottom: 3px solid black;
+}
+.btn-welcomeScreen:hover {
+  transform: scale(1.2);
+}
+
+.home-page-cards:hover {
+  transform: scale(0.9);
+}
+
+.custom-main {
+  background: linear-gradient(to top right, #2ff2a1 30%, #7aedfc 60%);
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* .welcome-screen {
+  background: linear-gradient(to bottom right, #145664 10%, #e27598e0 60%);
+} */
+
+.welcome-screen {
+  background: linear-gradient(to top right, #c3da18 40%, #8f1080e0 65%);
+  z-index: 1000;
+}
+.sigUpForm {
+  background-color: #055276;
+}
