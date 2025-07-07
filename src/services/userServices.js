@@ -12,7 +12,9 @@ async function signIn(credential) {
     const response = await httpServices.post("/users/sign-in", credential);
     setToken(response.data);
     return response;
-  } catch (error) {}
+  } catch (error) {
+    throw error;
+  }
 }
 
 function setToken(token) {
@@ -32,7 +34,7 @@ function logout() {
   localStorage.removeItem(TOKEN_KEY);
 }
 
-async function getUserFromToken() {
+function getUserFromToken() {
   try {
     const token = getJWT();
     if (!token) {
@@ -56,7 +58,7 @@ async function getAllUsers() {
 async function getUserById(id) {
   try {
     const response = await httpServices.get(`/users/${id}`);
-    return response.data;
+    return response;
   } catch (error) {
     console.log(error);
   }

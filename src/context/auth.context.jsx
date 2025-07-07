@@ -10,6 +10,7 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     if (authData) {
+      console.log("auth data :", authData);
       const loadUser = async () => {
         try {
           const userId = await userServices.getUserById(authData._id);
@@ -27,16 +28,15 @@ export function AuthProvider({ children }) {
     try {
       const response = await userServices.signIn(credential);
       setAuthData(userServices.getUserFromToken());
-      return response;
+      return response.data;
     } catch (error) {
-      console.log(error);
+      throw error;
     }
   };
 
   const logout = () => {
     userServices.logout();
     setUser(userServices.getUserFromToken());
-    setAuthData(null);
   };
 
   return (

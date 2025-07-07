@@ -37,6 +37,8 @@ function SignIn() {
     onSubmit: async (values) => {
       try {
         const response = await login(values);
+        console.log("response", response);
+
         if (response.status == 200) {
           navigate("/home");
         }
