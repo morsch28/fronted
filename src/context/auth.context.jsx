@@ -28,7 +28,7 @@ export function AuthProvider({ children }) {
     try {
       const response = await userServices.signIn(credential);
       setAuthData(userServices.getUserFromToken());
-      return response.data;
+      return response;
     } catch (error) {
       throw error;
     }

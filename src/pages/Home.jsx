@@ -34,6 +34,7 @@ function Home() {
     <div className="d-flex  gap-4 container-fluid justify-content-center">
       {fourChallengesCard.map((challenge) => (
         <div
+          key={challenge.title}
           className="card text-center d-flex justify-content-center align-items-center gap-2 home-page-cards mt-5"
           style={{ width: "12rem", height: "12rem", borderRadius: "20px" }}
         >

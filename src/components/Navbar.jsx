@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../context/auth.context";
 
 function Navbar() {
-  const { logout, user } = useAuth;
+  const { logout, user } = useAuth();
   const navigate = useNavigate();
   const handleLogout = () => {
     logout();
@@ -72,7 +72,7 @@ function Navbar() {
             </form>
           </ul>
         </div>
-        <div className="collapse navbar-collapse" id="navbarsExample04">
+        <div className="collapse navbar-collapse">
           <div className="dropdown">
             <img
               src="https://cdn-icons-png.flaticon.com/512/2922/2922510.png"
@@ -88,18 +88,19 @@ function Navbar() {
             <ul
               className="dropdown-menu dropdown-menu-end"
               aria-labelledby="userDropdown"
+              data-bs-auto-close="true"
             >
               {user ? (
-                <li>
+                <li className=" fs-5 d-flex flex-column fw-bold">
                   <Link className="dropdown-item text-primary" to="/user-info">
                     User Info
                   </Link>
                   <button
-                    className="dropdown-item text-danger"
+                    className="dropdown-item text-danger d-flex gap-2"
                     onClick={handleLogout}
                   >
-                    <i class="bi bi-box-arrow-right"></i>
                     Logout
+                    <i class="bi bi-box-arrow-right"></i>
                   </button>
                 </li>
               ) : (
