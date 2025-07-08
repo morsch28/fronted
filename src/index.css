@@ -32,14 +32,70 @@ body,
   display: block;
 }
 
-/* .welcome-screen {
-  background: linear-gradient(to bottom right, #145664 10%, #e27598e0 60%);
-} */
-
 .welcome-screen {
   background: linear-gradient(to top right, #c3da18 40%, #8f1080e0 65%);
   z-index: 1000;
 }
 .sigUpForm {
   background-color: #055276;
+}
+.welcomeImage {
+  width: 350px;
+  height: 350px;
+  border-radius: 30%;
+}
+.welcomeText {
+  font-size: 1.5rem;
+}
+.divStartBtn {
+  white-space: nowrap;
+  width: 350px;
+}
+.welcomeScreenToForm {
+  border-left: 2px solid white;
+}
+
+@media screen and (max-width: 1024px) {
+  .welcomeImage {
+    width: 60%;
+    height: 50%;
+  }
+  .welcomeText {
+    font-size: 100%;
+  }
+  .h1-welcomeScreen {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .h1-welcomeScreen {
+    font-size: 1.7rem;
+  }
+  .btnTwoStar {
+    font-size: 0.8rem !important;
+  }
+  .btnOneStart {
+    font-size: 0.8rem !important;
+  }
+  .divStartBtn {
+    white-space: nowrap;
+    width: 265px;
+  }
+}
+@media screen and (max-width: 426px) {
+  .welcome-screen {
+    flex-direction: column !important;
+  }
+  .welcomeText {
+    font-size: 74%;
+  }
+  .welcomeScreenToForm {
+    border-left: none;
+    border-top: 1px solid white;
+  }
+  .h1-welcomeScreen {
+    font-size: 0.9rem;
+    margin-top: 14px;
+  }
 }

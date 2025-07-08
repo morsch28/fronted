@@ -5,9 +5,11 @@ import Joi from "joi";
 import { normalizeUser } from "../user/normalizeUser";
 import userServices from "../services/userServices";
 import { useNavigate } from "react-router";
+import { useAuth } from "../context/auth.context";
 
 function SignUp() {
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const { handleSubmit, errors, touched, isValid, getFieldProps } = useFormik({
     initialValues: {
@@ -47,6 +49,7 @@ function SignUp() {
         const user = normalizeUser(values);
         const response = await userServices.createUser(user);
         if (response.status == 201) {
+          await login({ email: values.email, password: values.password });
           navigate("/home");
         }
       } catch (error) {

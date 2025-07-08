@@ -12,21 +12,16 @@ function WelcomeScreen() {
     <>
       <div className="d-flex  align-items-center  vh-100 vw-100 bg-light position-fixed top-0 start-0  text-center gap-2 welcome-screen">
         <div className="d-flex flex-column justify-content-center align-items-center w-50 gap-4">
-          <img
-            className="mt-1"
-            src={welcomeScreenImage}
-            alt=""
-            style={{ width: "350px", height: "350px", borderRadius: "30%" }}
-          />
+          <img className="mt-1 welcomeImage" src={welcomeScreenImage} />
           <TypeWriter
             text={`Welcome to my website - your gateway to a healthier and more balanced life.\nDiscover personalized challenges to improve your fitness, nutrition, sleep quality,\n and embed healthy habits into your daily routine.\n Join our community and start your journey toward meaningful change today.`}
           />
         </div>
-        <div className="d-flex flex-column w-50 align-items-center gap-4 border-start border-3">
+        <div className="d-flex flex-column w-50 align-items-center gap-4  border-3 welcomeScreenToForm">
           <h1 className=" h1-welcomeScreen">Mor(e) Wellness & LifeStyle</h1>
-          <div className="bg-dark-subtle w-50 d-flex align-items-center justify-content-center p-2 gap-2">
+          <div className="bg-dark-subtle  d-flex align-items-center justify-content-center p-2 gap-2 divStartBtn">
             <button
-              className={`border-0 p-2 w-50 rounded-2 fs-4 ${
+              className={`border-0 p-2 w-50 rounded-2 fs-4 btnOneStart ${
                 singIn ? "bg-white" : "bg-dark-subtle"
               }`}
               onClick={() => {
@@ -36,7 +31,7 @@ function WelcomeScreen() {
               Sign-In
             </button>
             <button
-              className={`border-0 p-2 w-50 rounded-2 fs-4 ${
+              className={`border-0 p-2 rounded-2 fs-4  ${
                 !singIn ? "bg-white" : "bg-dark-subtle"
               }`}
               onClick={() => {
@@ -52,7 +47,12 @@ function WelcomeScreen() {
               <p className="fs-4">
                 sign-in to continue your challenges journey
               </p>
-              <button className="border-2 border-light w-50 p-2 rounded-2 bg-success  text-light fs-5 d-flex text-center gap-3">
+              <button
+                onClick={() => {
+                  navigate("/sign-in");
+                }}
+                className="border-2 border-light  p-2 rounded-2 bg-success  text-light fs-5 d-flex text-center gap-3 startBtn"
+              >
                 <span>Click here to sign in</span>
                 <i className="bi bi-arrow-right fs-5"></i>
               </button>
@@ -64,7 +64,7 @@ function WelcomeScreen() {
                 create your account and begin transforming your life
               </p>
               <button
-                className="border-2 border-light w-50 p-2 rounded-2 bg-success  text-light fs-5 d-flex text-center gap-3"
+                className="border-2 border-light  p-2 rounded-2 bg-success  text-light fs-5 d-flex text-center gap-3"
                 onClick={() => {
                   navigate("/sign-up");
                 }}
