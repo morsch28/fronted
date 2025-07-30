@@ -37,8 +37,6 @@ function logout() {
 function getUserFromToken() {
   try {
     const token = getJWT();
-    console.log("token is:", token);
-
     return jwtDecode(token);
   } catch (error) {
     console.log(error);
@@ -57,6 +55,8 @@ async function getAllUsers() {
 async function getUserById(id) {
   try {
     const response = await httpServices.get(`/users/${id}`);
+    console.log("response:", response);
+
     return response.data;
   } catch (error) {
     console.log(error);
@@ -90,6 +90,7 @@ const userServices = {
   logout,
   signIn,
   createUser,
+  refreshToken,
 };
 
 export default userServices;

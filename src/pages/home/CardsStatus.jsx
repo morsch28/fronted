@@ -1,4 +1,4 @@
-function Home() {
+function CardsStatus() {
   const fourChallengesCard = [
     {
       title: "completed",
@@ -31,25 +31,28 @@ function Home() {
   ];
 
   return (
-    <div className="d-flex  gap-4 container-fluid justify-content-center">
+    <div
+      className="d-flex  gap-3 container justify-content-center align-items-center"
+      style={{ height: "100px" }}
+    >
       {fourChallengesCard.map((challenge) => (
         <div
           key={challenge.title}
-          className="card text-center d-flex justify-content-center align-items-center gap-2 home-page-cards mt-5"
-          style={{ width: "12rem", height: "12rem", borderRadius: "20px" }}
+          className="card text-center d-flex justify-content-center align-items-center home-page-cards mt-2"
+          style={{ width: "8rem", height: "8rem", borderRadius: "20px" }}
         >
           <div
             className={`${challenge.bgColor}  ${challenge.txColor} rounded-5 d-flex align-items-center justify-content-center fs-2`}
-            style={{ width: "60px", height: "60px" }}
+            style={{ width: "50px", height: "50px" }}
           >
             <i className={`${challenge.icon}`}></i>
           </div>
-          <div className="fs-1 fw-bold">{challenge.count}</div>
-          <div className="fs-5">{challenge.title}</div>
+          <div className="fs-4 fw-bold">{challenge.count}</div>
+          <div className="cardsStatus-title">{challenge.title}</div>
         </div>
       ))}
     </div>
   );
 }
 
-export default Home;
+export default CardsStatus;

@@ -5,18 +5,19 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  /* overflow-x: hidden;
+  overflow-y: hidden; */
 }
-.h1-welcomeScreen,
-.p-welcomeScreen {
+
+.h1-welcomePage,
+.p-welcomePage {
   font-family: Raleway;
 }
-.h1-welcomeScreen {
+.h1-welcomePage {
   font-size: 3.2rem;
   border-bottom: 3px solid black;
 }
-.btn-welcomeScreen:hover {
+.btn-welcomePage:hover {
   transform: scale(1.2);
 }
 
@@ -33,7 +34,6 @@ body,
 }
 
 .welcome-screen {
-  background: linear-gradient(to top right, #c3da18 40%, #8f1080e0 65%);
   z-index: 1000;
 }
 .sigUpForm {
@@ -42,7 +42,6 @@ body,
 .welcomeImage {
   width: 350px;
   height: 350px;
-  border-radius: 30%;
 }
 .welcomeText {
   font-size: 1.5rem;
@@ -51,8 +50,55 @@ body,
   white-space: nowrap;
   width: 350px;
 }
-.welcomeScreenToForm {
-  border-left: 2px solid white;
+.welcomePageToForm {
+  border-left: 2px solid purple;
+}
+.signUp {
+  border: 1px solid black;
+  background: linear-gradient(
+    to top right,
+    #f6ffaf 40%,
+    #fdbbf5e0 65%
+  ) !important;
+}
+.signIn {
+  border: 1px solid black;
+  background: linear-gradient(
+    to top right,
+    #f6ffaf 40%,
+    #fdbbf5e0 65%
+  ) !important;
+}
+
+.challengesContainer {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 16px;
+  padding: 20px;
+  min-height: 80vh;
+  overflow: auto;
+  text-align: center;
+}
+
+.addChallenges {
+  box-shadow: 0px 0px 30px 2px;
+}
+.selectedChallenges {
+  text-align: center;
+  padding: 15px;
+  max-height: 350px;
+  margin-top: 30px;
+  overflow: auto;
+  box-shadow: 0px 0px 30px 3px;
+}
+
+.addChallenges {
+  width: 400px;
+  background-color: white;
+  height: 300px;
+}
+.cardsStatus-title {
+  font-size: 20px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -63,13 +109,22 @@ body,
   .welcomeText {
     font-size: 100%;
   }
-  .h1-welcomeScreen {
+  .h1-welcomePage {
     font-size: 2rem;
+  }
+  .selectedChallenges {
+    width: 90%;
+  }
+  .addChallenges {
+    width: 90%;
+  }
+  .cardsStatus-title {
+    font-size: 12px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .h1-welcomeScreen {
+  .h1-welcomePage {
     font-size: 1.7rem;
   }
   .btnTwoStar {
@@ -82,7 +137,14 @@ body,
     white-space: nowrap;
     width: 265px;
   }
+  .home-Challenges {
+    flex-direction: column;
+  }
+  .selectedCards {
+    flex-direction: column !important;
+  }
 }
+
 @media screen and (max-width: 426px) {
   .welcome-screen {
     flex-direction: column !important;
@@ -90,11 +152,11 @@ body,
   .welcomeText {
     font-size: 74%;
   }
-  .welcomeScreenToForm {
+  .welcomePageToForm {
     border-left: none;
     border-top: 1px solid white;
   }
-  .h1-welcomeScreen {
+  .h1-welcomePage {
     font-size: 0.9rem;
     margin-top: 14px;
   }
